@@ -122,7 +122,7 @@ class YoloThread(QThread):
                             "quantity": "1"
                             }
                         response = requests.post(api_url_add_bottle, headers=self.headers, json=data_bottle)
-                        response.raise_for_status()
+                        # response.raise_for_status()
                         add_bottle_response = response.json()
                         print("Metal Bottles added successfully!")
                     except:
@@ -139,7 +139,7 @@ class YoloThread(QThread):
                             "quantity": "1"
                             }
                         response = requests.post(api_url_add_bottle, headers=self.headers, json=data_bottle)
-                        response.raise_for_status()  # Raise exception for non-200 status codes cmt
+                        # response.raise_for_status()  # Raise exception for non-200 status codes cmt
                         add_bottle_response = response.json()
                         print("Pet Bottles added successfully!")
                     except:
@@ -160,7 +160,7 @@ class YoloThread(QThread):
                             "quantity": "1"
                             }
                         response = requests.post(api_url_add_bottle, headers=self.headers, json=data_bottle)
-                        response.raise_for_status()  # Raise exception for non-200 status codes  cmt
+                        # response.raise_for_status()  # Raise exception for non-200 status codes  cmt
                         add_bottle_response = response.json()
                         print("Glass Bottles added successfully!")
                     except:
@@ -336,7 +336,7 @@ class MainWindow(QMainWindow):
 
                     self.data_login = {"mobilenum": self.currentTextEng}
                     response = requests.post(api_url_login, headers=headers, json=self.data_login)
-                    response.raise_for_status()
+                    # response.raise_for_status()
                     login_response = response.json()
                     auth_token = login_response["data"]["authtoken"]
                     headers["Authorization"] = f"Bearer {auth_token}"
@@ -383,7 +383,7 @@ class MainWindow(QMainWindow):
                 self.ui.stackedWidget.setCurrentWidget(self.ui.bottleSelectionHindi)
                 self.data_login = {"mobilenum": self.currentTextHindi}
                 response = requests.post(api_url_login, headers=headers, json=self.data_login)
-                response.raise_for_status()
+                # response.raise_for_status()
                 login_response = response.json()
                 auth_token = login_response["data"]["authtoken"]
                 headers["Authorization"] = f"Bearer {auth_token}"
