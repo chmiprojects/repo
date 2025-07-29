@@ -351,7 +351,9 @@ class MainWindow(QMainWindow):
                     QMessageBox.warning(self, "Warning", "Please enter a correct number")
 
             except:
-                QMessageBox.warning(self, "Warning", "No Internetें")
+                        pass
+            
+                # QMessageBox.warning(self, "Warning", "No Internetें")
 
     def num_1_hindi_clicked(self):
         self.ui.inputHindi.insert("1")
